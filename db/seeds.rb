@@ -14,3 +14,5 @@ Post.destroy_all
 user1 = User.create(name:"Kurt", password: "password")
 
 Post.create(title: "how to make a post", content: "this is an example of creating a post", User: user1)
+
+Post.create(title: "how to make a post", content: "this is an example of creating a post", user_id: user1.id)
