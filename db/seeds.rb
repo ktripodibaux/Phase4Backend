@@ -13,6 +13,12 @@ Post.destroy_all
 
 user1 = User.create(name:"Kurt", password: "password")
 
-Post.create(title: "how to make a post", content: "this is an example of creating a post", User: user1)
+post1 = Post.create(title: "how to make a post", content: "this is an example of creating a post", User: user1)
 
-Post.create(title: "how to make a post", content: "this is an example of creating a post", user_id: user1.id)
+post2 = Post.create(title: "different post", content: "this is an example of creating a post", User: user1)
+
+Post.create(title: "different post number 3", content: "this is an example of creating a post", User: user1)
+
+Comment.create(content: "this post sucks", User: user1, Post: post1)
+
+Comment.create(content: "I like this !", User: user1, Post: post1)

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/create'
-  get 'sessions/destroy'
+  delete '/logout', to: 'sessions#destroy'
   resources :comments
   resources :posts
   resources :users
@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   post "/login", to: "sessions#create"
+  get "users/posts/:id", to: "users#posts"
 
 end
